@@ -33,6 +33,7 @@ public class WebSecurity{
         AuthenticationManager authenticationManager = authenticationManager(http.getSharedObject(AuthenticationConfiguration.class));
 
         http.csrf().disable();
+        http.authorizeRequests().antMatchers("/actuator/**").permitAll();
         http.authorizeRequests()
                 .antMatchers("/error/**")
                 .hasIpAddress("192.168.219.105")
