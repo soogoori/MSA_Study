@@ -36,7 +36,7 @@ public class WebSecurity{
         http.authorizeRequests().antMatchers("/actuator/**").permitAll();
         http.authorizeRequests()
                 .antMatchers("/error/**")
-                .hasIpAddress("192.168.219.105")
+                .hasIpAddress("192.168.219.106")
                 //.hasIpAddress("172.20.19.12")
                 .and()
                 .addFilter(getAuthenticationFilter(authenticationManager)); // 로그인할 때 제일 먼저 시도
